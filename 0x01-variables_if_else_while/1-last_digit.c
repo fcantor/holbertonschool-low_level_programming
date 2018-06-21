@@ -2,7 +2,7 @@
 #include <time.h>
 #include <stdio.h>
 
-/*
+/**
  * main - This program outputs a random number to the screen and
  * tells the user what the last digit of the random number is
  * and whether the digit is greater than 5, less than 6 but not 0,
