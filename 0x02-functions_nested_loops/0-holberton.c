@@ -6,7 +6,7 @@
  */
 int main(void)
 {
-	char ch[13] = "Hello, World";
+	char ch[] = "Holberton";
 	int i;
 
 	for (i = 0; ch[i] != '\0'; i++)
