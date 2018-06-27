@@ -30,7 +30,9 @@ void times_table(void)
 			}
 
 			/* Add an extra space if printing single digits */
-			if ((x * y) < 10)
+			if (y == 9 && x == 0)
+				break;
+			else if (x * (y + 1) < 10)
 				_putchar(' ');
 		}
 		_putchar('\n');
