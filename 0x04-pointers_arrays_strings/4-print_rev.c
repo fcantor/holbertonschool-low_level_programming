@@ -1,7 +1,5 @@
 #include "holberton.h"
 
-int _strlen(char *s);
-
 /**
  * print_rev - This function prints a string in reverse
  * followed by a newline
@@ -9,9 +7,10 @@ int _strlen(char *s);
  */
 void print_rev(char *s)
 {
-	int i, len;
+	int h, i, len;
 
-	len = _strlen(s);
+	for (h = 0; s[h] != '\0'; h++)
+		len++;
 
 	for (i = len; i != -1; --i)
 		_putchar(s[i]);
