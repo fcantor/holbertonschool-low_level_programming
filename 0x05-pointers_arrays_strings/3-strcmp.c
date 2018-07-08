@@ -9,10 +9,16 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	for (; *s1 == *s2; ++s1, ++s2)
+	int i, n;
+
+	/* loop through both strings while s1 is not null */
+	for (i = 0; s1[i] != 0 && s2[i] != 0; i++)
 	{
-		if (*s1 == *s2)
-			return (0);
+		/* find where characters don't match in strings */
+		if ((s1[i] - s2[i]) != 0)
+			break;
 	}
-	return (*s1 - *s2);
+
+	/* return difference between those characters */
+	return (s1[i] - s2[i]);
 }
