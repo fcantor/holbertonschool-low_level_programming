@@ -16,6 +16,7 @@ char *_strncpy(char *dest, char *src, int n)
 	for (i = 0; i < n && src[i] != 0; i++)
 		dest[i] = src[i];
 
+	/* add null byte to dest string array after copied char */
 	for(; i < n; i++)
 		dest[i] = '\0';
 
