@@ -9,9 +9,9 @@
 
 int _strcmp(char *s1, char *s2)
 {
-	int i, n;
+	int i;
 
-	/* loop through both strings while s1 is not null */
+	/* loop through both strings while s1 & s2 are not null */
 	for (i = 0; s1[i] != 0 && s2[i] != 0; i++)
 	{
 		/* find where characters don't match in strings */
