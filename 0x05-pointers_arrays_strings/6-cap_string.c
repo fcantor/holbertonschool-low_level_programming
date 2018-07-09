@@ -20,7 +20,7 @@ char *cap_string(char *s)
 		for (j = 0; separators[j] != '\0'; j++)
 		{
 			/* if s[i] matches a separator */
-			while(separators[j] == s[i])
+			while (separators[j] == s[i])
 			{
 				/* move onto the next element and evaluate */
 				i++;
