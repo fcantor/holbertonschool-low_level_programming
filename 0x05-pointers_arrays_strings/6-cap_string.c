@@ -1,41 +1,33 @@
 #include "holberton.h"
-#include <stdio.h>
 
 /**
- * *cap_string - This function capitalizes all words of a string
- * @s: The string to evaluate
- * Return: The converted string
+ * cap_string - This function capitalizes all words of a string
+ * @s: String to evaluate
+ * Return: The string converted
  */
 
 char *cap_string(char *s)
 {
-	int i, j, placement;
-	char separators[] = {' ', '\t', '\n', ',', ';', '.', '!', '?', '"', '(',
-			     ')', '{', '}'};
+	int i;
 
-	/* loop throuth the string and evaluate each character */
-	for (i = 0; s[i] != '\0'; i++)
+	/* make sure the first letter is capitalized */
+	if (s[0] >= 'a' && s[0] <= 'z')
+		s[0] = s[0] - ' ';
+
+	for (i = 1; s[i] != '\0'; i++)
 	{
-		/* loop through the separators for a match with s[i] */
-		for (j = 0; separators[j] != '\0'; j++)
+		/* see if the element before is a separator */
+		if ((s[i - 1] == ' ' || s[i - 1] == '\n' || s[i - 1] == '\t'
+		         || s[i - 1] == ',' || s[i - 1] == ';' || s[i - 1] == '!'
+		         || s[i - 1] == '?' || s[i - 1] == '"' || s[i - 1] == '('
+		          || s[i - 1] == ')' || s[i - 1] == '{' || s[i - 1] == '}'
+		     || s[i - 1] == '.') && (s[i] > 'a' && s[i] < 'z'))
 		{
-			/* if s[i] matches a separator */
-			while (separators[j] == s[i])
-			{
-				/* move onto the next element and evaluate */
-				i++;
-				/* if the next element is a lowercase char */
-				if (s[i] >= 'a' && s[i] <= 'z')
-				{
-					/* convert to uppercase */
-					placement = 26 - ('z' - s[i]);
-					s[i] = placement + 64;
-				}
-				else
-					continue;
-			}
+			/* if it is, convert the s[i] element to uppercase */
+			s[i] = s[i] - ' ';
 		}
 	}
 
+	/* return the converted string */
 	return (s);
 }
