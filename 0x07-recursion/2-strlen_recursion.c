@@ -9,7 +9,7 @@
 
 int _strlen_recursion(char *s)
 {
-	/* base call */
+	/* base case */
 	if (*s == 0)
 		return (0);
 	else
