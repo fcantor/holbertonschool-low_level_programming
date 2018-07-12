@@ -21,7 +21,7 @@ int strlen_recursion(char *s)
 /**
  * helper - This function evaluates a string
  * @s: The string to evaluate
- * @n: The length of the string
+ * @len: The length of the string
  * Return: 1 if s is a palindrom, otherwise 0
  */
 
@@ -32,7 +32,7 @@ int helper(char *s, int len)
 		return (1);
 	/* if current index is equal to half the index */
 	else if (*s == *(s + len - 1))
-	    return (helper(s + 1, len - 2));
+		return (helper(s + 1, len - 2));
 	else
 		return (0);
 }
@@ -52,5 +52,5 @@ int is_palindrome(char *s)
 	if (len <= 1)
 		return (1);
 
-	return(helper(s, len));
+	return (helper(s, len));
 }
