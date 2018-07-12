@@ -1,13 +1,7 @@
 #include "holberton.h"
 
 /**
- * _sqrt_recursion - This function returns the natural square root of a number
- * @n: The number to find the square root of
- * Return: The integer natural square root of n
- */
-
-/**
- * helper - This function returns the natural square root of n to sqrt_recursion
+ * helper - This function returns natural square root of n to sqrt_recursion
  * @n: The number to find the squre root of
  * @i: The helper integer
  * Return: The integer natural square root
@@ -25,6 +19,12 @@ int helper(int n, int i)
 	else
 		return (-1);
 }
+
+/**
+ * _sqrt_recursion - This function returns the natural square root of a number
+ * @n: The number to find the square root of
+ * Return: The integer natural square root of n
+ */
 
 int _sqrt_recursion(int n)
 {
