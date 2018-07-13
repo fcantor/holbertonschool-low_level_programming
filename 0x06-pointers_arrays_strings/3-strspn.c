@@ -15,6 +15,7 @@ unsigned int _strspn(char *s, char *accept)
 	/* loop through the s array */
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		/* break out of this loop once matches has value */
 		if (matches != i)
 			break;
 
