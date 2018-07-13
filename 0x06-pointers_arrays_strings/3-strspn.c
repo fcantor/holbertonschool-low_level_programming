@@ -12,6 +12,9 @@ unsigned int _strspn(char *s, char *accept)
 {
 	unsigned int i, j, matches;
 
+	if (s[0] == '\0' || accept[0] == '\0')
+		return (0);
+
 	/* loop through the s array */
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -31,8 +34,6 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		if (matches == 0)
-			return (0);
 	}
 	return (matches);
 }
