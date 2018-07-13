@@ -31,6 +31,8 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
+		if (matches == 0)
+			return (0);
 	}
 	return (matches);
 }
