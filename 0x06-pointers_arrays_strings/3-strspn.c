@@ -15,6 +15,9 @@ unsigned int _strspn(char *s, char *accept)
 	/* loop through the s array */
 	for (i = 0; s[i] != '\0'; i++)
 	{
+		if (matches != i)
+			break;
+
 		/* loop through the accept array */
 		for (j = 0; accept[j] != '\0'; j++)
 		{
@@ -27,10 +30,6 @@ unsigned int _strspn(char *s, char *accept)
 				break;
 			}
 		}
-		/* if there are matches, and at the end of accept array */
-		if (matches > 0 && accept[j] == '\0')
-			/* return the counted matches */
-			return (matches);
 	}
 	return (matches);
 }
