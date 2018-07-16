@@ -1,5 +1,6 @@
 #include "holberton.h"
 #include <stdio.h>
+#define UNUSED(argc) (void)(argc)
 
 /**
  * main - This program prints its name, followed by a newline
@@ -10,6 +11,7 @@
 
 int main(int argc, char *argv[])
 {
+	UNUSED(argc);
 
 	printf("%s\n", argv[0]);
 
