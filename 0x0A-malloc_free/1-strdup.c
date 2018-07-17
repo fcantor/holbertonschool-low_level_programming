@@ -2,6 +2,22 @@
 #include <stdlib.h>
 
 /**
+ * _strlen - This function returns the length of a string
+ * @s: Variable that contains a character array to be counted
+ * Return: Length of the string
+ */
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		continue;
+
+	return (i);
+}
+
+
+/**
  * _strdup - This function returns a pointer to a newly allocated space
  * in memory, which contains a copy of the string given as a parameter
  * @str: The string to copy
@@ -18,7 +34,7 @@ char *_strdup(char *str)
 		return (NULL);
 
 	/* allocate enough memory for copy */
-	copy = malloc(sizeof(str));
+	copy = malloc(_strlen(str));
 
 	/* if malloc fails, return NULL */
 	if (copy == NULL)
