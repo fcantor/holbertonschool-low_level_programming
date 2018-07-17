@@ -13,11 +13,10 @@ char *_strdup(char *str)
 	char *copy;
 	unsigned int i;
 
+	copy = malloc(sizeof(str));
+
 	if (copy == NULL)
 		return (NULL);
-
-	/* allocate enough memory for copy */
-	copy = malloc(sizeof(str));
 
 /* check for if string is NULL */
 	if (str == NULL)
