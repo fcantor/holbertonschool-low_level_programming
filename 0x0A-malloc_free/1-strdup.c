@@ -13,11 +13,14 @@ char *_strdup(char *str)
 	char *copy;
 	unsigned int i;
 
+	if (copy == NULL)
+		return (NULL);
+
 	/* allocate enough memory for copy */
 	copy = malloc(sizeof(str));
 
 /* check for if string is NULL */
-	if (str == NULL || copy == NULL)
+	if (str == NULL)
 		return (NULL);
 
 	/* copy string inside str to copy */
