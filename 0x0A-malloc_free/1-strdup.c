@@ -34,7 +34,7 @@ char *_strdup(char *str)
 		return (NULL);
 
 	/* allocate enough memory for copy */
-	copy = malloc(_strlen(str));
+	copy = malloc(_strlen(str) + 1);
 
 	/* if malloc fails, return NULL */
 	if (copy == NULL)
