@@ -13,19 +13,22 @@ char *_strdup(char *str)
 	char *copy;
 	unsigned int i;
 
-	copy = (char*)malloc(sizeof(str));
-
-	if (copy == NULL)
+	/* if str is NULL, return NULL */
+	if (str == NULL)
 		return (NULL);
 
-/* check for if string is NULL */
-	if (str == NULL)
+	/* allocate enough memory for copy */
+	copy = malloc(sizeof(str));
+
+	/* if malloc fails, return NULL */
+	if (copy == NULL)
 		return (NULL);
 
 	/* copy string inside str to copy */
 	for (i = 0; str[i] != '\0'; i++)
 		copy[i] = str[i];
 
+	/* append null terminator to copy */
 	copy[i] = '\0';
 
 	return (copy);
