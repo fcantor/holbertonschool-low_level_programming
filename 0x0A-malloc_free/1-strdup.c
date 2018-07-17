@@ -21,5 +21,9 @@ char *_strdup(char *str)
 	for (i = 0; str[i] != '\0'; i++)
 		copy[i] = str[i];
 
+	/* if string is empty, return null */
+	if (i == 0)
+		return (NULL);
+
 	return (copy);
 }
