@@ -16,10 +16,16 @@ char *create_array(unsigned int size, char c)
 
 	/* checker for size */
 	if (size == 0)
-		return NULL;
+		return (NULL);
 
 	/* create an array with size of char size */
 	s = malloc(size * sizeof(char));
+
+	/* if it fails, return NULL */
+	if (s == NULL)
+		return (NULL);
+
+	/* initialize every element in array with c */
 	for (i = 0; i < size; i++)
 		s[i] = c;
 
