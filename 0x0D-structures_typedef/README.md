@@ -15,6 +15,6 @@ File: [1-init_dog.c](https://github.com/fcantor/holbertonschool-low_level_progra
 This function initializes a variable of type ```struct dog```
 
 ## 2. Printing a Struct
-File: [2-print_dog.c](https://github.com)
+File: [2-print_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/2-print_dog.c)
 
 This function prints a ```struct dog```. If an element of the struct is NULL, it prints ```(nil)``` instead of the element. If the struct is NULL, it doesn't print anything.
