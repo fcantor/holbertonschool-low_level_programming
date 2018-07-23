@@ -1,5 +1,7 @@
 # 0x0D. C - Structures, typedef
-## Task 0. Django
+This repository contains project 0x0D which introduces the use and familiarity with structures and the ```typedef```keyword in C. Below are the list of files and their descriptions.
+
+## 0. Structures & Typedef
 File: [dog.h](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/dog.h)
 
 This header file defines a new type ```struct dog``` with the following elements:
@@ -7,7 +9,7 @@ This header file defines a new type ```struct dog``` with the following elements
 * ```float age```
 * ```char* owner```
 
-## Task 1. A dog is the only thing on earth that loves you more than you love yourself
-File: *1-init_dog.c*
+## 1. Initializing a Struct
+File: [1-init_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/1-init_dog.c)
 
 This function initializes a variable of type ```struct dog```
