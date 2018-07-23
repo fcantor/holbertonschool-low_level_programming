@@ -1,5 +1,4 @@
 #include <stdio.h>
-#include <stdlib.h>
 #include "dog.h"
 
 /**
@@ -12,15 +11,19 @@ void print_dog(struct dog *d)
 	/* if the pointer is NULL, don't do anything */
 	if (d == NULL)
 		;
-	/* if an element of d is NULL, print (nil) */
-	else if (d->name == NULL || d->age == 0 || d->owner == NULL)
-		printf("(nil)");
-	/* otherwise, print all elements in the struct */
+
+	/* if an element of d is NULL, print nil. else, print element */
+	if (d->name == NULL)
+		puts("Name: (nil)");
 	else
-	{
 		printf("Name: %s\n", d->name);
-		printf("Age: %f\n", d->age);
+
+	/* print age regardless since integer value can't be null */
+	printf("Age: %f\n", d->age);
+
+	if (d->owner == NULL)
+		puts("Owner: (nil)");
+	else
 		printf("Owner: %s\n", d->owner);
-	}
 
 }
