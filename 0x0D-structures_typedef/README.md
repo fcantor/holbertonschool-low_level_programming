@@ -9,6 +9,10 @@ This header file defines a new type ```struct dog``` with the following elements
 * ```float age```
 * ```char* owner```
 
+---
+
+Also in this header is a new ```struct dog``` type, ```dog_t```
+
 ## 1. Initializing a Struct
 File: [1-init_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/1-init_dog.c)
 
