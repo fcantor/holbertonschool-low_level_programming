@@ -22,12 +22,12 @@ File: [3-function_like_macro.h](https://github.com/fcantor/holbertonschool-low_l
 
 This header file contains a defined function-like macro ```ABS(x)``` that computes the absolute value of a number ```x```.
 
-4. SUM
+## 4. SUM
 File: [4-sum.h](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0C-preprocessor/4-sum.h)
 
 This header file contains a defined function-like macro ```SUM(x, y)``` that computes the sum of the numbers ```x``` and ```y```.
 
-6. Fun with the preprocessor
+## 6. Fun with the preprocessor
 File: [101-preprocessor_abuse.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0C-preprocessor/101-preprocessor_abuse.c)
 
 This program can print ```Hello, Holberton``` followed by a newline.
