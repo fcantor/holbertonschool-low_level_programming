@@ -27,3 +27,8 @@ This function prints a ```struct dog```. If an element of the struct is NULL, it
 File: [4-new_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/4-new_dog.c)
 
 This function ```new_dog``` creates an instance of the ```struct dog```
+
+## Freeing Pointers Through a Function
+File: [5-free_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/5-free_dog.c)
+
+This function frees pointers used in 4-new_dog.c and it's main function. Output at exit using valgrind is 0 bytes in 0 blocks.
