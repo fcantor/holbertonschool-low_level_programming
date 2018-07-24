@@ -31,7 +31,7 @@ This header file contains a defined function-like macro ```SUM(x, y)``` that com
 File: [101-preprocessor_abuse.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0C-preprocessor/101-preprocessor_abuse.c)
 
 This program can print ```Hello, Holberton``` followed by a newline.
-### Constraints:
+### Constraints for Task 6:
 * Not allowed to use more than one line of code
 * Not allowed to use more than 32 characters, including documentation of functions and the preprocessor directives
 * Not allowed to include other c files, nor other header files
