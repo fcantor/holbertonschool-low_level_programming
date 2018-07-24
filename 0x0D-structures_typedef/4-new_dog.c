@@ -51,14 +51,31 @@ dog_t *new_dog(char *name, float age, char *owner)
 		return (NULL);
 
 	/* if name or owner arguments passed are NULL, return NULL */
-	if (name == NULL || owner == NULL)
+	if (!name || !owner)
 		return (NULL);
 
-	/* initialize values of new struct */
-	puppo->name = _strdup(name);
-	puppo->age = age;
-	puppo->owner = _strdup(owner);
-
+	if (puppo)
+	{
+		/* initialize values of new struct */
+		puppo->name = _strdup(name);
+		/* if puppo->name is null */
+		if (!puppo->name)
+		{
+			/* free pointer puppo and return null */
+			free(puppo);
+			return (NULL);
+		}
+		puppo->age = age;
+		puppo->owner = _strdup(owner);
+		/* if puppo->owner is null */
+		if (!puppo->owner)
+		{
+			/* free previous pointers */
+			free(puppo->name);
+			free(puppo);
+			return (NULL);
+		}
+	}
 	/* return pointer to new struct puppo */
 	return (puppo);
 }
