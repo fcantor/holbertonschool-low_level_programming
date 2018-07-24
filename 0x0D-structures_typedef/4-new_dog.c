@@ -1,4 +1,3 @@
-#include <stdio.h>
 #include <stdlib.h>
 #include "dog.h"
 
@@ -13,17 +12,23 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	/* creating an instance of type dog_t struct called puppo */
-	dog_t *new_dog = malloc(sizeof(struct dog));
+	dog_t *puppo = malloc(sizeof(dog_t));
 
 	/* if malloc fails, return NULL */
-	if (new_dog == NULL)
+	if (puppo == NULL)
 		return (NULL);
 
-	/* initialize values of new struct to passed values */
-	new_dog->name = name;
-	new_dog->age = age;
-	new_dog->owner = owner;
+	/* if name or owner arguments passed are NULL, return NULL */
+	if (name == NULL || owner == NULL)
+		return (NULL);
 
+	if (puppo)
+	{
+		/* initialize values of new struct to passed values */
+		puppo->name = name;
+		puppo->age = age;
+		puppo->owner = owner;
+	}
 	/* return pointer to new struct puppo */
-	return (new_dog);
+	return (puppo);
 }
