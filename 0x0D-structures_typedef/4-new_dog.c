@@ -1,5 +1,4 @@
 #include <stdlib.h>
-#include <stdio.h>
 #include "dog.h"
 
 /**
@@ -8,7 +7,7 @@
  * Return: The duplicated string
  */
 
-char *_strdup (const char *s)
+char *_strdup(const char *s)
 {
 	int i, j;
 	char *d = NULL;
@@ -17,7 +16,7 @@ char *_strdup (const char *s)
 	for (i = 0; s[i] != '\0'; i++)
 		;
 	/* allocate space for length and null */
-	d = malloc (i + 1);
+	d = malloc(i + 1);
 
 	/* if malloc fails, return NULL */
 	if (d == NULL)
