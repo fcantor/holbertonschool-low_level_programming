@@ -1,7 +1,7 @@
 # 0x0D. C - Structures, typedef
 This repository contains project 0x0D which introduces the use and familiarity with structures and the ```typedef```keyword in C. Below are the list of files and their descriptions.
 
-## 0. Structures & Typedef
+## Structures & Typedef
 File: [dog.h](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/dog.h)
 
 This header file defines a new type ```struct dog``` with the following elements:
