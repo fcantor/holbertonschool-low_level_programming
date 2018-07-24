@@ -1,5 +1,38 @@
 #include <stdlib.h>
+#include <stdio.h>
 #include "dog.h"
+
+/**
+ * *_strcpy - This function duplicates strings
+ * @s: The string to copy
+ * Return: The string copy
+ */
+
+char *_strdup (const char *s)
+{
+	int i, j;
+	char *d = NULL;
+
+	/* find length of s */
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	/* allocate space for length and null */
+	d = malloc (i + 1);
+
+	/* if malloc fails, return NULL */
+	if (d == NULL)
+		return (NULL);
+
+	/* copy the characters into a separate string */
+	for (j = 0; s[j] != '\0'; j++)
+		d[j] = s[j];
+
+	d[j] = '\0';
+
+	/* return the new string */
+	return (d);
+}
+
 
 /**
  * new_dog - This function creates an instance of the struct dog
@@ -22,13 +55,11 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (name == NULL || owner == NULL)
 		return (NULL);
 
-	if (puppo)
-	{
-		/* initialize values of new struct to passed values */
-		puppo->name = name;
-		puppo->age = age;
-		puppo->owner = owner;
-	}
+	/* initialize values of new struct */
+	puppo->name = _strdup(name);
+	puppo->age = age;
+	puppo->owner = _strdup(owner);
+
 	/* return pointer to new struct puppo */
 	return (puppo);
 }
