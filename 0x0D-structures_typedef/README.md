@@ -13,12 +13,17 @@ This header file defines a new type ```struct dog``` with the following elements
 
 Also in this header is a new ```struct dog``` type, ```dog_t```
 
-## 1. Initializing a Struct
+## Initializing a Struct
 File: [1-init_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/1-init_dog.c)
 
 This function initializes a variable of type ```struct dog```
 
-## 2. Printing a Struct
+## Printing a Struct
 File: [2-print_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/2-print_dog.c)
 
 This function prints a ```struct dog```. If an element of the struct is NULL, it prints ```(nil)``` instead of the element. If the struct is NULL, it doesn't print anything.
+
+## Creating an Instance of a Struct Through a Function
+File: [4-new_dog.c](https://github.com)
+
+This function ```new_dog``` creates a an instance of the ```struct dog```
