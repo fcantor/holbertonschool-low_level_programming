@@ -54,11 +54,12 @@ dog_t *new_dog(char *name, float age, char *owner)
 	if (!name || !owner)
 		return (NULL);
 
+	/* if the pointer exists, run the following */
 	if (puppo)
 	{
 		/* initialize values of new struct */
 		puppo->name = _strdup(name);
-		/* if puppo->name is null */
+		/* if puppo->name doesn't exist */
 		if (!puppo->name)
 		{
 			/* free pointer puppo and return null */
@@ -67,7 +68,7 @@ dog_t *new_dog(char *name, float age, char *owner)
 		}
 		puppo->age = age;
 		puppo->owner = _strdup(owner);
-		/* if puppo->owner is null */
+		/* if puppo->owner doesn't exist */
 		if (!puppo->owner)
 		{
 			/* free previous pointers */
