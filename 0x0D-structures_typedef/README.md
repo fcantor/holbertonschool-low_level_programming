@@ -24,6 +24,6 @@ File: [2-print_dog.c](https://github.com/fcantor/holbertonschool-low_level_progr
 This function prints a ```struct dog```. If an element of the struct is NULL, it prints ```(nil)``` instead of the element. If the struct is NULL, it doesn't print anything.
 
 ## Creating an Instance of a Struct Through a Function
-File: [4-new_dog.c](https://github.com)
+File: [4-new_dog.c](https://github.com/fcantor/holbertonschool-low_level_programming/blob/master/0x0D-structures_typedef/4-new_dog.c)
 
-This function ```new_dog``` creates a an instance of the ```struct dog```
+This function ```new_dog``` creates an instance of the ```struct dog```
