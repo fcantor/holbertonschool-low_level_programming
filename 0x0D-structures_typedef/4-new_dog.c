@@ -3,9 +3,9 @@
 #include "dog.h"
 
 /**
- * *_strcpy - This function duplicates strings
- * @s: The string to copy
- * Return: The string copy
+ * *_strdup - This function duplicates strings
+ * @s: The string to duplicate
+ * Return: The duplicated string
  */
 
 char *_strdup (const char *s)
