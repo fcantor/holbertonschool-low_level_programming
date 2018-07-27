@@ -17,8 +17,7 @@ int main(int argc, char *argv[])
 	int a, b, ans;
 	int (*p)(int, int);
 
-	/* check to make sure number of arguments passed from command line are
-	   correct */
+	/* check to make sure number of arguments passed from command line */
 	if (argc != 4)
 	{
 		printf("Error\n");
