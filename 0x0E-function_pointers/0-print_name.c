@@ -1,4 +1,5 @@
 #include "function_pointers.h"
+#include <stdio.h>
 
 /**
  * print_name - This function prints a name
@@ -8,11 +9,9 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	/* create separate function pointer that takes a char returns nothing */
-	void (*func_ptr)(char *);
-
-	/* assign passed function pointer to new function pointer */
-	func_ptr = f;
-	/* call function with name argument that was passed */
-	func_ptr(name);
+	/* if function pointer is null, print null */
+	if (f == NULL)
+		;
+	else
+		f(name);
 }
