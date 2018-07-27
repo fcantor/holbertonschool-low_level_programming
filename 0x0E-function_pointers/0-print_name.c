@@ -8,5 +8,11 @@
 
 void print_name(char *name, void (*f)(char *))
 {
-	f(name);
+	/* create separate function pointer that takes a char returns nothing */
+	void (*func_ptr)(char *);
+
+	/* assign passed function pointer to new function pointer */
+	func_ptr = f;
+	/* call function with name argument that was passed */
+	func_ptr(name);
 }
