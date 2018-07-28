@@ -15,7 +15,10 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 
 	/* counter variable declaration */
 	unsigned int i;
-	char *s = "";
+
+	/* make sure there are more than 0 arguments */
+	if (n == 0)
+		return;
 
 	/* initialize list */
 	va_start(ap, n);
@@ -31,7 +34,7 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		{
 			/* if separator is NULL, don't print it */
 			if (separator == NULL)
-				printf("%d%s", va_arg(ap, int), s);
+				printf("%d", va_arg(ap, int));
 			else
 				printf("%d%s", va_arg(ap, int), separator);
 		}
