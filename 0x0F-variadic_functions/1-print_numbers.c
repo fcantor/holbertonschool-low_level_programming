@@ -41,4 +41,6 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 		/* free memory */
 		va_end(ap);
 	}
+	else
+		write(2, va_arg(ap, int), sizeof(int));
 }
