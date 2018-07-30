@@ -16,8 +16,9 @@ void print_numbers(const char *separator, const unsigned int n, ...)
 	/* counter variable declaration */
 	unsigned int i;
 
+	/* make sure there are more than 0 arguments */
 	if (n == 0)
-		write(2, "\n", sizeof(char));
+		printf("\n");
 
 	/* initialize list */
 	va_start(ap, n);
