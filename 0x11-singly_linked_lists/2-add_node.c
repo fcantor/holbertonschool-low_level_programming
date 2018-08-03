@@ -65,7 +65,7 @@ list_t *add_node(list_t **head, const char *str)
 {
 
 	/* create new list & allocate memory for it */
-	list_t *new = (list_t*) malloc(sizeof(list_t));
+	list_t *new = (list_t *)malloc(sizeof(list_t));
 
 	/* assign new data */
 	new->str = _strdup(str);
