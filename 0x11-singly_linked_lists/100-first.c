@@ -1,7 +1,6 @@
 #include <stdio.h>
-#include "lists.h"
 
-void print(void) __attribute__((constructor));
+void __attribute__((constructor)) print(void);
 
 /**
  * print - This function prints a sentence before main is executed
