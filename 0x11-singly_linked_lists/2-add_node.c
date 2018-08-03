@@ -54,11 +54,11 @@ char *_strdup(const char *str)
 
 
 /**
- * add_node - This function adds a new node at the
+ * *add_node - This function adds a new node at the
  * beginning of a linked list_t list
  * @head: The beginning of the linked list
  * @str: The string to duplicate into the new node
- * Return - The address of the new element, of NULL if it failed
+ * Return: The address of the new element, of NULL if it failed
  */
 
 list_t *add_node(list_t **head, const char *str)
