@@ -29,9 +29,8 @@ int _strlen(const char *s)
 
 list_t *add_node_end(list_t **head, const char *str)
 {
-	/* creating last pointer and assigning head to it */
-	list_t *last = *head;
-
+	/* creating last pointer */
+	list_t *last;
 	/* create new list & allocate memory for it */
 	list_t *new = (list_t *)malloc(sizeof(list_t));
 
@@ -48,17 +47,16 @@ list_t *add_node_end(list_t **head, const char *str)
 
 	/* if head is NULL, new list becomes head */
 	if (*head == NULL)
-	{
 		*head = new;
-		return (NULL);
+	else
+	{
+		last = *head;
+		/* traverse list to get to the last node */
+		while (last->next != NULL)
+			last = last->next;
+		/* assign last node to new node */
+		last->next = new;
 	}
-
-	/* traverse list to get to the last node */
-	while (last->next != NULL)
-		last = last->next;
-
-	/* change pointer of last node to new node */
-	last->next = new;
 
 	return (new);
 
