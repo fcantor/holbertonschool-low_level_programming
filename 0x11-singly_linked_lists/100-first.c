@@ -9,6 +9,7 @@ void __attribute__((constructor)) print();
 
 void print(void)
 {
-	printf("You're beat! and yet, you must allow,\nI bore my houseupon my back!\n");
+	printf("You're beat! and yet, you must allow,\n"
+	       "I bore my houseupon my back!\n");
 
 }
