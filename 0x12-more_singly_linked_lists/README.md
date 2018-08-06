@@ -20,3 +20,8 @@ This function adds a new node at the beginning of a listint_t list.
 File: ```3-add_nodeint_end.c```
 
 This function adds a new node at the end of a listint_t list.
+
+## 4. Free list
+File: ```4-free_listint.c```
+
+This function frees a listint_t list.
