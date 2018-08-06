@@ -24,4 +24,9 @@ This function adds a new node at the end of a listint_t list.
 ## 4. Free list
 File: ```4-free_listint.c```
 
-This function frees a listint_t list.
+This function frees a listint_t list, taking in a pointer as an argument.
+
+## 5. Free
+File: ```5-free_listint2.c```
+
+This function frees a listint_t list, taking in a double pointer as an argument.
