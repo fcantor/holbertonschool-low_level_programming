@@ -18,6 +18,10 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 	/* create temp node & allocate memory for it */
 	listint_t *tmp = malloc(sizeof(listint_t));
 
+	/* check to make sure malloc didn't fail */
+	if (tmp == NULL)
+		return (NULL);
+
 	/* assign data to tmp */
 	tmp->n = n;
 	tmp->next = NULL;
@@ -35,5 +39,5 @@ listint_t *add_nodeint_end(listint_t **head, const int n)
 		last->next = tmp;
 	}
 
-	return (last->next);
+	return (tmp);
 }
