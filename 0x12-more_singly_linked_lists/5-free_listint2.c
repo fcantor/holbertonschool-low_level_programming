@@ -9,10 +9,6 @@
 
 void free_listint2(listint_t **head)
 {
-	/* check for null list */
-	if (head == NULL)
-		return (NULL);
-
 	/* create tmp pointers */
 	listint_t **tmp;
 	listint_t *tmp2;
