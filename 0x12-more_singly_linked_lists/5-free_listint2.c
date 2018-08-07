@@ -10,7 +10,7 @@
 void free_listint2(listint_t **head)
 {
 	/* check for null list */
-	if (*head == NULL)
+	if (head == NULL)
 		return (NULL);
 
 	/* create tmp pointers */
