@@ -30,3 +30,8 @@ This function frees a listint_t list, taking in a pointer as an argument.
 File: ```5-free_listint2.c```
 
 This function frees a listint_t list, taking in a double pointer as an argument.
+
+## 6. Pop
+File: ```6-pop_listint.c```
+
+This function deletes the head node of a listint_t linked list, and returns the head node's data.
