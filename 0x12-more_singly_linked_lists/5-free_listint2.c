@@ -9,6 +9,7 @@
 
 void free_listint2(listint_t **head)
 {
+
 	/* create tmp pointers */
 	listint_t **tmp;
 	listint_t *tmp2;
@@ -16,6 +17,9 @@ void free_listint2(listint_t **head)
 	/* initialize pointers */
 	tmp2 = NULL;
 	tmp = &tmp2;
+
+	if (head == NULL)
+		return;
 
 	while (*head != NULL)
 	{
