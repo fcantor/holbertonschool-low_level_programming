@@ -35,3 +35,23 @@ This function frees a listint_t list, taking in a double pointer as an argument.
 File: ```6-pop_listint.c```
 
 This function deletes the head node of a listint_t linked list, and returns the head node's data.
+
+## 7. Get node at index
+```File: 7-get_nodeint.c```
+
+This function returns the nth node of a listint_t linked list.
+
+## 8. Sum list
+File: ```8-sum_listint.c```
+
+This function returns the sum of all the data (n) of a listint_t linked list.
+
+## 9. Insert
+File: ```9-insert_nodeint.c```
+
+This function inserts a new node at a given position.
+
+## 10. Delete at index
+File: ```10-delete_nodeint.c```
+
+This function deletes the node at index ```index``` of a listint_t linked list.
