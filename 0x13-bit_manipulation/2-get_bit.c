@@ -14,8 +14,8 @@ int get_bit(unsigned long int n, unsigned int index)
 	unsigned int val = n >> index;
 
 	/* error check: if index greater than bit */
-        if (index >= (sizeof(n) * 8))
-                return (-1);
+	if (index >= (sizeof(n) * 8))
+		return (-1);
 
 	/* mask off low-order bits and return last bit */
 	return (val & 1);
