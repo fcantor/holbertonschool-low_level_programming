@@ -1,4 +1,0 @@
-[submodule "0x18-stacks_queues_lifo_fifo"]
-	path = 0x18-stacks_queues_lifo_fifo
-	url = https://github.com/fcantor/monty
-	branch = master
