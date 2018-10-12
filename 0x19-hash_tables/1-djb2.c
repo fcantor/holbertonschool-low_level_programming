@@ -1,8 +1,8 @@
 #include "hash_tables.h"
 
 /**
- * djb2 - This hash function is by Dan Bernstein and uses the magic of number
- * 33 to hash the key string passed into it
+ * hash_djb2 - This hash function is by Dan Bernstein and uses the magic of
+ * number 33 to hash the key string passed into it
  * @str: The key to hash
  * Return: The hashed value
  */
