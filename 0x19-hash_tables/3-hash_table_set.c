@@ -25,15 +25,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		/* search array at index to see if it exists at the beginning */
 		for (; p != NULL; p = p->next)
+			;
+		/* if key in node matches key we're searching */
+		if (!strcmp(p->key, (char *)key))
 		{
-			/* if key in node matches key we're searching */
-			if (!strcmp(p->key, (char *)key))
-			{
-				/* new value supercedes existing value */
-				free(p->value);
-				p->value = strdup(value);
-				return (1); /* return 1 for success */
-			}
+			/* new value supercedes existing value */
+			free(p->value);
+			p->value = strdup(value);
+			return (1); /* return 1 for success */
 		}
 	}
 	/* malloc a new node */
