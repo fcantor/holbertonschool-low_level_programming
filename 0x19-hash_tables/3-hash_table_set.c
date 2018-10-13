@@ -18,16 +18,18 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* take the index of the key and assign to i */
 	i = key_index((unsigned char *)key, ht->size);
+	/* set node pointer to beginning of array */
 	p = ht->array[i];
+	/* if pointer is not NULL */
 	if (p)
 	{
-		/* search array, start at index to see if it exists at the beginning */
+		/* search array at index to see if it exists at the beginning */
 		for (; p != NULL; p = p->next)
 		{
 			/* if key in node matches key we're searching */
-			if (!strcmp(p->key, key))
+			if (!strcmp(p->key, (char *)key))
 			{
-				/* free the existing value and replace with new value */
+				/* new value supercedes existing value */
 				free(p->value);
 				p->value = strdup(value);
 				return (1); /* return 1 for success */
