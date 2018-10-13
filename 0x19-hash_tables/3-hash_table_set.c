@@ -1,6 +1,36 @@
 #include "hash_tables.h"
 
 /**
+ * add_node - creates a new node in the hash table
+ * @key: The key to add
+ * @value: The corresponding value to add
+ * Return: A pointer to the new node
+ */
+hash_node_t *add_node(const char *key, const char *value)
+{
+	hash_node_t *new_node;
+
+	new_node = malloc(sizeof(hash_node_t));
+	if (!new_node)
+		return (NULL);
+	new_node->key = strdup(key);
+	if (!new_node->key)
+	{
+		free(new_node);
+		return (NULL);
+	}
+	new_node->value = strdup(value);
+	if (!new_node->value)
+	{
+		free(new_node->key);
+		free(new_node);
+		return (NULL);
+	}
+	new_node->next = NULL;
+	return (new_node);
+}
+
+/**
  * hash_table_set - This function adds an element to the hash table
  * @ht: A pointer to the hash table
  * @key: The key to add to the hash table
@@ -9,44 +39,36 @@
  */
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
-	hash_node_t *new = NULL, *p = NULL;
-	unsigned long int i = 0;
+	hash_node_t *new_node, *p;
+	unsigned int index;
 
-	/* initial check for null values or an empty key */
 	if (!ht || !key || !*key || !value)
 		return (0);
 
-	/* take the index of the key and assign to i */
-	i = key_index((unsigned char *)key, ht->size);
-	/* set node pointer to beginning of array */
-	p = ht->array[i];
-	/* if pointer is not NULL */
-	if (p)
+	index = key_index((unsigned char *)key, ht->size);
+	p = ht->array[index];
+	if (!p)
 	{
-		/* search array at index to see if it exists at the beginning */
-		for (; p != NULL; p = p->next)
-		/* if key in node matches key we're searching */
-		if (!strcmp(p->key, (char *)key))
+		new_node = add_node(key, value);
+		if (!new_node)
+			return (0);
+		p = new_node;
+		return (1);
+	}
+
+	for (; p != NULL; p = p->next)
+	{
+		if (strcmp(key, p->key) == 0)
 		{
-			/* new value supercedes existing value */
 			free(p->value);
 			p->value = strdup(value);
-			return (1); /* return 1 for success */
+			return (1);
 		}
 	}
-	/* malloc a new node */
-	new = malloc(sizeof(hash_node_t));
-	if (!new)
+	new_node = add_node(key, value);
+	if (!new_node)
 		return (0);
-
-	new->key = strdup(key);
-	if (!new->value)
-	{
-		free(new->key);
-		free(new);
-		return (0);
-	}
-	new->next = ht->array[i];
-	ht->array[i] = new;
+	new_node->next = p;
+	p = new_node;
 	return (1);
 }
