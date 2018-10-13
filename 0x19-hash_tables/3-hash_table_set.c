@@ -18,17 +18,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	/* take the index of the key and assign to i */
 	i = key_index((unsigned char *)key, ht->size);
-
-	/* search array, start at index to see if it exists at the beginning */
-	for (p = ht->array[i]; p != NULL; p = p->next)
+	p = ht->array[i];
+	if (p)
 	{
-		/* if key in node matches key we're searching */
-		if (!strcmp(p->key, key))
+		/* search array, start at index to see if it exists at the beginning */
+		for (; p != NULL; p = p->next)
 		{
-			/* free the existing value and replace with new value */
-			free(p->value);
-			p->value = strdup(value);
-			return (1); /* return 1 for success */
+			/* if key in node matches key we're searching */
+			if (!strcmp(p->key, key))
+			{
+				/* free the existing value and replace with new value */
+				free(p->value);
+				p->value = strdup(value);
+				return (1); /* return 1 for success */
+			}
 		}
 	}
 	/* malloc a new node */
