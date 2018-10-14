@@ -40,35 +40,29 @@ hash_node_t *add_node(const char *key, const char *value)
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 {
 	hash_node_t *new_node, *p;
-	unsigned int index;
+	unsigned long int index;
 
-	if (!ht || !key || !*key || !value)
+	if (!ht || !key || !*key || !value || strcmp(key, "") == 0)
 		return (0);
 
-	index = key_index((unsigned char *)key, ht->size);
+	index = key_index((const unsigned char *)key, ht->size);
 	p = ht->array[index];
-	if (!p)
-	{
-		new_node = add_node(key, value);
-		if (!new_node)
-			return (0);
-		p = new_node;
-		return (1);
-	}
 
-	for (; p != NULL; p = p->next)
+	if (p)
 	{
-		if (strcmp(key, p->key) == 0)
+		for (; p != NULL; p = p->next)
 		{
-			free(p->value);
-			p->value = strdup(value);
-			return (1);
+			if (strcmp(key, p->key) == 0)
+			{
+				free(p->value);
+				p->value = strdup(value);
+				return (1);
+			}
 		}
 	}
 	new_node = add_node(key, value);
 	if (!new_node)
 		return (0);
-	new_node->next = p;
 	p = new_node;
 	return (1);
 }
