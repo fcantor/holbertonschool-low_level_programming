@@ -47,22 +47,20 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 
 	index = key_index((const unsigned char *)key, ht->size);
 	p = ht->array[index];
-
-	if (p)
+	for (; p != NULL; p = p->next)
 	{
-		for (; p != NULL; p = p->next)
+		if (strcmp(key, p->key) == 0)
 		{
-			if (strcmp(key, p->key) == 0)
-			{
-				free(p->value);
-				p->value = strdup(value);
-				return (1);
-			}
+			free(p->value);
+			p->value = strdup(value);
+			return (1);
 		}
 	}
+
 	new_node = add_node(key, value);
 	if (!new_node)
 		return (0);
+	new_node->next = p;
 	p = new_node;
 	return (1);
 }
