@@ -11,15 +11,21 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 	unsigned long int idx;
 	hash_node_t *p;
 
+	if (ht == NULL)
+		return (NULL);
+
 	/* get index of key */
 	idx = key_index((const unsigned char *)key, ht->size);
 
 	/* loop through linked list starting at idx */
 	p = ht->array[idx];
-	for (; p != NULL; p = p->next)
+	if (p)
 	{
-		if (strcmp(p->key, key) == 0)
-			return (p->value);
+		for (; p != NULL; p = p->next)
+		{
+			if (strcmp(p->key, key) == 0)
+				return (p->value);
+		}
 	}
 	return (NULL);
 }
