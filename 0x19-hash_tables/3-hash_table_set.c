@@ -18,6 +18,7 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	idx = key_index((const unsigned char *)key, ht->size);
 	if (ht->array[idx] != NULL && strcmp(key, ht->array[idx]->key) == 0)
 	{
+		free(ht->array[idx]->value);
 		ht->array[idx]->value = strdup(value);
 		return (1);
 	}
