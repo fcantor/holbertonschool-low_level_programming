@@ -1,17 +1,19 @@
 #include "sort.h"
 
 /**
- *
- *
- *
- *
- *
+ *bubble_sort - sort an array of integers
+ *using bubble sort algorithm
+ *@array: array of integers
+ *@size: size of array
+ *Return: void
  */
 void bubble_sort(int *array, size_t size)
 {
 	int temp, flag;
 	size_t i = 0;
 
+	if (size < 2)
+		return;
 	while (array && i < size)
 	{
 		if (array[i] > array[i + 1])
@@ -23,7 +25,7 @@ void bubble_sort(int *array, size_t size)
 			print_array(array, size);
 
 			flag += 1;
-                        i += 1;
+			i += 1;
 		}
 		else
 			i += 1;
