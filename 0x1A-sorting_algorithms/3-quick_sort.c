@@ -57,49 +57,25 @@ size_t partition(int *array, size_t begin, size_t end, size_t size)
 	{
 		if (array[i] < pivot)
 		{
-<<<<<<< HEAD
-<<<<<<< HEAD
-			if (que != i)
-=======
 			if (que != i && array[que] != array[i])
->>>>>>> 03e4a13126c24ed2df30131d79264c603ab071a4
-=======
-			if (que != i && array[i] != array[que])
->>>>>>> 4f1ee0e5d94eab846cc027119d38bf07b98589bf
 			{
 				/* swap array[i] & array[que] */
 				tmp = array[i];
 				array[i] = array[que];
 				array[que] = tmp;
-<<<<<<< HEAD
-<<<<<<< HEAD
-				
-=======
->>>>>>> 03e4a13126c24ed2df30131d79264c603ab071a4
-=======
->>>>>>> 4f1ee0e5d94eab846cc027119d38bf07b98589bf
 				/* increment que and print array */
 				print_array(array, size);
 			}
 			que++;
-<<<<<<< HEAD
-	        }
-	}
-<<<<<<< HEAD
-	if (que != end)
-=======
 		}
 	}
 	if (que != end && array[que] != array[end])
->>>>>>> 03e4a13126c24ed2df30131d79264c603ab071a4
-=======
-	if (que != end && array[end] != array[que])
->>>>>>> 4f1ee0e5d94eab846cc027119d38bf07b98589bf
 	{
 		/* swap a[que] and pivot */
 		tmp = array[que];
 		array[que] = array[end];
 		array[end] = tmp;
+
 		print_array(array, size);
 	}
 	return (que);
