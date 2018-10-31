@@ -57,7 +57,7 @@ size_t partition(int *array, size_t begin, size_t end, size_t size)
 	{
 		if (array[i] < pivot)
 		{
-			if (que != i)
+			if (que != i && array[que] != array[i])
 			{
 				/* swap array[i] & array[que] */
 				tmp = array[i];
@@ -69,7 +69,7 @@ size_t partition(int *array, size_t begin, size_t end, size_t size)
 			que++;
 		}
 	}
-	if (que != end)
+	if (que != end && array[que] != array[end])
 	{
 		/* swap a[que] and pivot */
 		tmp = array[que];
