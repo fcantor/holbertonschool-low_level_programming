@@ -63,7 +63,6 @@ size_t partition(int *array, size_t begin, size_t end, size_t size)
 				tmp = array[i];
 				array[i] = array[que];
 				array[que] = tmp;
-				
 				/* increment que and print array */
 				print_array(array, size);
 			}
