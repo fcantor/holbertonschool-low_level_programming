@@ -57,20 +57,33 @@ size_t partition(int *array, size_t begin, size_t end, size_t size)
 	{
 		if (array[i] < pivot)
 		{
+<<<<<<< HEAD
 			if (que != i)
+=======
+			if (que != i && array[que] != array[i])
+>>>>>>> 03e4a13126c24ed2df30131d79264c603ab071a4
 			{
 				/* swap array[i] & array[que] */
 				tmp = array[i];
 				array[i] = array[que];
 				array[que] = tmp;
+<<<<<<< HEAD
 				
+=======
+>>>>>>> 03e4a13126c24ed2df30131d79264c603ab071a4
 				/* increment que and print array */
 				print_array(array, size);
 			}
 			que++;
+<<<<<<< HEAD
 	        }
 	}
 	if (que != end)
+=======
+		}
+	}
+	if (que != end && array[que] != array[end])
+>>>>>>> 03e4a13126c24ed2df30131d79264c603ab071a4
 	{
 		/* swap a[que] and pivot */
 		tmp = array[que];
