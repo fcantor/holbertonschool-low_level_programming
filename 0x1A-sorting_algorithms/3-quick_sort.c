@@ -27,9 +27,9 @@ void sort(int *array, size_t begin, size_t end, size_t size)
 {
 	size_t p;
 
-	p = partition(array, begin, end, size);
 	if (begin < end)
 	{
+		p = partition(array, begin, end, size);
 		sort(array, begin, p - 1, size);
 		sort(array, p + 1, end, size);
 	}
@@ -47,10 +47,10 @@ void sort(int *array, size_t begin, size_t end, size_t size)
 size_t partition(int *array, size_t begin, size_t end, size_t size)
 {
 
-	size_t pivot = array[end];
+	int pivot = array[end];
 	size_t que = begin;
 	size_t tmp;
-	int i;
+	size_t i;
 
 	for (i = begin; i < end; i++)
 	{
@@ -62,9 +62,9 @@ size_t partition(int *array, size_t begin, size_t end, size_t size)
 			array[que] = tmp;
 
 			/* increment que and print array */
-			que++;
-			print_array(array, size);
+	        	print_array(array, size);
 		}
+		que++;
 		/* swap a[que] and pivot */
 		tmp = array[que];
 		array[que] = pivot;
