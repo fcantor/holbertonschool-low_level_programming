@@ -11,6 +11,7 @@ void quick_sort(int *array, size_t size)
 {
 	if (size < 2)
 		return;
+
 	sort(array, 0, size - 1, size);
 }
 
@@ -46,6 +47,29 @@ void sort(int *array, size_t begin, size_t end, size_t size)
 size_t partition(int *array, size_t begin, size_t end, size_t size)
 {
 
+	size_t pivot = array[end];
+	size_t que = begin;
+	size_t tmp;
+	int i;
+
+	for (i = begin; i < end; i++)
+	{
+		if (array[i] <= pivot)
+		{
+			/* swap array[i] & array[que] */
+			tmp = array[i];
+			array[i] = array[que];
+			array[que] = tmp;
+
+			/* increment que and print array */
+			que++;
+			print_array(array, size);
+		}
+		/* swap a[que] and pivot */
+		tmp = array[que];
+		array[que] = pivot;
+		pivot = tmp;
+	}
+	return (que);
+
 }
-
-
