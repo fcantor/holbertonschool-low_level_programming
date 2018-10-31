@@ -30,7 +30,8 @@ void sort(int *array, size_t begin, size_t end, size_t size)
 	if (begin < end)
 	{
 		p = partition(array, begin, end, size);
-		sort(array, begin, p - 1, size);
+		if (p > 0)
+			sort(array, begin, p - 1, size);
 		sort(array, p + 1, end, size);
 	}
 }
@@ -49,26 +50,34 @@ size_t partition(int *array, size_t begin, size_t end, size_t size)
 
 	int pivot = array[end];
 	size_t que = begin;
-	size_t tmp;
+	int tmp;
 	size_t i;
 
 	for (i = begin; i < end; i++)
 	{
-		if (array[i] <= pivot)
+		if (array[i] < pivot)
 		{
-			/* swap array[i] & array[que] */
-			tmp = array[i];
-			array[i] = array[que];
-			array[que] = tmp;
-
-			/* increment que and print array */
-	        	print_array(array, size);
-		}
-		que++;
+			if (que != i)
+			{
+				/* swap array[i] & array[que] */
+				tmp = array[i];
+				array[i] = array[que];
+				array[que] = tmp;
+				
+				/* increment que and print array */
+				print_array(array, size);
+			}
+			que++;
+	        }
+	}
+	if (que != end)
+	{
 		/* swap a[que] and pivot */
 		tmp = array[que];
-		array[que] = pivot;
-		pivot = tmp;
+		array[que] = array[end];
+		array[end] = tmp;
+
+		print_array(array, size);
 	}
 	return (que);
 
