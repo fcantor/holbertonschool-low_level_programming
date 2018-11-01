@@ -7,69 +7,43 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *run1 = *list;
-	listint_t *run2, *tmp_p, *tmp_n, *tmp;
+	listint_t *p = NULL, *current = NULL;
 
-	run2 = (*list)->next;
+	/* check if elements in list are greater than two */
+	if (list == NULL || (*list) == NULL || (*list)->next == NULL)
+		return;
 
-	/* run through linked list from left to right */
-	while (run1 != NULL)
+	/* set p and current variables to second node */
+	p = current = (*list)->next;
+
+	/* while second node is not null */
+	while (current)
 	{
-		if (run2 < run1)
+		/* set current to third node */
+		current = current->next;
+
+		/* while first node exists
+		 * AND 2nd node val is < 1st node val */
+		while (p->prev && p->n < p->prev->n)
 		{
-			/* swap */
-			tmp_p = run1;
-			tmp_n = run1->next->next;
-			if (tmp_p)
+			/* 1st node now points to 3rd node */
+			p->prev->next = p->next;
+			/* if 3rd node is not null */
+			if (p->next != NULL)
 			{
-				run2->prev = tmp_p->prev;
-				run2->next = tmp_p;
-				tmp_p->prev = run2;
-				tmp_p->next = tmp_n;
+				/* 3rd node points to 1st node */
+				p->next->prev = p->prev;
 			}
-			if (tmp_n)
-				tmp_n->prev = tmp_p;
-			/* print list */
+			/* 2nd node->next points to 1st node */
+			p->next = p->prev;
+			p->prev = p->next->prev;
+			if (p->prev)
+				p->prev->next = p;
+			else
+				*list = p;
+			p->next->prev = p;
 			print_list(*list);
 		}
-
-		/* run through linked list from right to left */
-		while (run1 != *list)
-		{
-			if (run1 < run1->prev)
-			{
-				/* swap */
-				tmp_p = run2->prev;
-				tmp_n = run2->next;
-				if (tmp_p)
-				{
-					run2->prev = tmp_p->prev;
-					run2->next = tmp_p;
-					tmp_p->prev = run2;
-					tmp_p->next = tmp_n;
-				}
-				if (tmp_n)
-                                        tmp_n->prev = tmp_p;
-                                if (run2->prev)
-                                        run2->prev->next = run2;
-				/* print list */
-				print_list(*list);
-			}
-			else
-			{
-				run1 = tmp;
-				if (tmp != *list)
-					tmp = tmp->prev;
-			}
-		}
-		/* move runners */;
-		if (run2->next != NULL)
-		{
-			run1 = run2;
-			run2 = run2->next;
-		}
-		/* implement stop condition */
-		if (run2->next == NULL)
-			break;
+		p = current;
 	}
 }
