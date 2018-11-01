@@ -22,8 +22,8 @@ void insertion_sort_list(listint_t **list)
 		/* set current to third node */
 		current = current->next;
 
-		/* while first node exists
-		 * AND 2nd node val is < 1st node val */
+
+		/* while first node && 2nd < 1st */
 		while (p->prev && p->n < p->prev->n)
 		{
 			/* 1st node now points to 3rd node */
@@ -34,7 +34,6 @@ void insertion_sort_list(listint_t **list)
 				/* 3rd node points to 1st node */
 				p->next->prev = p->prev;
 			}
-			/* 2nd node->next points to 1st node */
 			p->next = p->prev;
 			p->prev = p->next->prev;
 			if (p->prev)
