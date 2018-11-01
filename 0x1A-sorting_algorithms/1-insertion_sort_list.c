@@ -6,51 +6,42 @@
  */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *head, *run1, *run2, *tmp;
-	int m = 0;
+	listint_t *p = NULL, *current = NULL;
 
-	run1 = head;
-	run2 = head->next;
+		/* check if elements in list are greater than two */
+		if (list == NULL || (*list) == NULL || (*list)->next == NULL)
+			return;
 
-	/* run through linked list from left to right */
-	while (!run1)
-	{
-		if (run2->n < run1->n)
+		/* set p and current variables to second node */
+		p = current = (*list)->next;
+
+		/* while second node is not null */
+		while (current)
 		{
-			/* swap */
-			m = run1->n;
-			run1->n = run2->n;
-			run2->n = m;
-			print_list(*list);
-		}
+			/* set current to third node */
+			current = current->next;
 
-		/* run through linked list from right to left */
-		while (run1 != head)
-		{
-			tmp = run1->prev->n;
-			if (run1->n < tmp->n)
+
+			/* while first node && 2nd < 1st */
+			while (p->prev && p->n < p->prev->n)
 			{
-				/* swap */
-				m = run1->n;
-				run1->n = tmp->n;
-				tmp->n = m;
+				/* 1st node now points to 3rd node */
+				p->prev->next = p->next;
+				/* if 3rd node is not null */
+				if (p->next != NULL)
+				{
+					/* 3rd node points to 1st node */
+					p->next->prev = p->prev;
+				}
+				p->next = p->prev;
+				p->prev = p->next->prev;
+				if (p->prev)
+					p->prev->next = p;
+				else
+					*list = p;
+				p->next->prev = p;
 				print_list(*list);
 			}
-			else
-			{
-				run1 = tmp;
-				if (tmp != head)
-					tmp->n = tmp->prev->n;
-			}
+			p = current;
 		}
-		/* move runners */;
-		if (run2->next != NULL)
-		{
-			run1 = run2;
-			run2 = run2->next;
-		}
-		/* implement stop condition */
-		if (tmp == head)
-			break;
-	}
 }
