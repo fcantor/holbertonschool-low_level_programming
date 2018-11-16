@@ -17,20 +17,20 @@ This project introduces the use and purpose of Makefiles. Concepts covered are:
 - A README.md file, at the root of the folder of the project, is mandatory
 
 ## Tasks:
-###0. make -f 0-Makefile
+### 0. make -f 0-Makefile
 file: ```0-Makefile```
 
-###1. make -f 1-Makefile
+### 1. make -f 1-Makefile
 file: ```1-Makefile```
 
-###2. make -f 2-Makefile
+### 2. make -f 2-Makefile
 file: ```2-Makefile```
 
-###3. make -f 3-Makefile
+### 3. make -f 3-Makefile
 file: ```3-Makefile```
 
-###4. A complete Makefile
+### 4. A complete Makefile
 file: ```4-Makefile```
 
-###5-island_perimeter.py
+### 5-island_perimeter.py
 file: ```5-island_perimeter.py```
