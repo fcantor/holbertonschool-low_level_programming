@@ -1,2 +1,0 @@
-all:
-	gcc holberton.c -o holberton
