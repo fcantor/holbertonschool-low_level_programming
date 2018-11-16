@@ -8,10 +8,10 @@ all: $(OBJ)
 	$(CC) $(SRC) -o $(NAME)
 
 clean:
-	$(RM) -f *~ holberton
+	$(RM) -f *~ $(NAME)
 
 oclean:
-	$(RM) -f main.o holberton.o
+	$(RM) -f $(OBJ)
 
 fclean: clean oclean
 
