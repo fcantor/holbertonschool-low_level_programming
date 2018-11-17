@@ -21,4 +21,8 @@ def island_perimeter(grid):
                     perimeter += 1
                 if (r + 1) >= rows or grid[r+1][c] == 0:
                     perimeter += 1
-    return (perimeter)
+
+    if perimeter >= 400:
+        return (0)
+    else:
+        return (perimeter)
