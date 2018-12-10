@@ -1,5 +1,7 @@
 # 0x1C. C - Binary trees
 
+![Binary Search Tree](https://mir-s3-cdn-cf.behance.net/project_modules/fs/0a4d0c53171193.592b186f94827.png)
+
 The purpose of this project is to introduce and master the following concepts:
 - What is a binary tree
 - What is the difference between a binary tree and a Binary Search Tree
