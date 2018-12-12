@@ -1,0 +1,28 @@
+#include "binary_trees.h"
+
+/**
+ * binary_tree_node - This function creates a binary tree node
+ * @parent: The pointer to the node's parent
+ * @value: The data inside the new binary tree node
+ * Return: A pointer to the new node
+ */
+binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
+{
+    binary_tree_t new_node = malloc(sizeof(binary_tree_t));
+    if (!new_node)
+	return (NULL);
+
+    new_node->parent = parent;
+    new_node->n = value;
+
+    return (new_node);
+}
+
+/**
+ * ALGO:
+ * - create instance of struct as new node
+ * - if node above exists, set parent
+ * - else set parent to null?
+ * - set value inside new node
+ * - return pointer to new node
+ */
