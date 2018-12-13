@@ -20,9 +20,6 @@ binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value)
 	if (!left_child)
 		return (NULL);
 
-	/* set value inside of left-child */
-	left_child->n = value;
-
 	/* Check to see if parent already has left node */
 	if (parent->left)
 	{
