@@ -8,17 +8,17 @@
  */
 void print(int *array, size_t lower, size_t upper)
 {
-        size_t i = 0;
+	size_t i = 0;
 
-        printf("Searching in array: ");
-        for (i = lower; i < upper; i++)
-                printf("%d, ", array[i]);
-        printf("%d\n", array[upper]);
+	printf("Searching in array: ");
+	for (i = lower; i < upper; i++)
+		printf("%d, ", array[i]);
+	printf("%d\n", array[upper]);
 }
 
 /**
- * binary_search - This function searches for a value in a sorted array of integers
- * using the Binary search algorithm
+ * binary_search - This function searches for a value in a sorted array of
+ * integers using the Binary search algorithm
  * @array: Pointer to the first element of the array
  * @size: The number of elements in the array
  * @value: The value to search for
